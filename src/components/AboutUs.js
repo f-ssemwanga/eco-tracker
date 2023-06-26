@@ -1,5 +1,3 @@
-export const AboutUs = () =>{ 
-    return <div>
-        About us
-    </div>
-}
+export const AboutUs = () => {
+  return <div>About us</div>;
+};

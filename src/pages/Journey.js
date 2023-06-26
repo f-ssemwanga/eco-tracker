@@ -1,5 +1,3 @@
 export const Journey = () => {
-    return <div>
-        Journey
-    </div>
-}
+  return <div>Journey</div>;
+};

@@ -8,7 +8,7 @@ export const App = () => {
   return (
     <BrowserRouter>
       <NavigationBar />
-      <Banner/>
+      <Banner />
       <Container>
         <AppRoutes />
       </Container>

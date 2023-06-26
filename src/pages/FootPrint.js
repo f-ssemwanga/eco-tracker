@@ -1,5 +1,3 @@
 export const FootPrint = () => {
-    return <div>
-        Footprint
-    </div>
-}
+  return <div>Footprint</div>;
+};
