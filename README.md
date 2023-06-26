@@ -16,12 +16,12 @@ Eco-Tracker is a carbon footprint awareness project. It will calculate carbon em
 * npm run start
 
 ## Screenshots
-![alt text](./images/eco-tracker.jpg)
 
 ### Desktop
 ![alt text](./images/eco-tracker.jpg)
 
 ### Mobile 
+![alt text](./images/eco-tracker.jpg)
 
 ## Technologies and Frameworks
 * React
