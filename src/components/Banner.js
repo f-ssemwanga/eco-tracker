@@ -1,4 +1,6 @@
 export const Banner = () => {
-    return <div>
-    Banner</div>
+    return 
+    <div>
+    Banner
+    </div>
 }
