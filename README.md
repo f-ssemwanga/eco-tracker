@@ -31,8 +31,8 @@ npm run start
 
 
 ## Contact me:
-Francis: https://github.com/f-ssemwanga
--Luke: https://github.com/N20-Dev
--LordNinth: https://github.com/LordNinth
--Viktoria: https://github.com/Vikkk111
+* Francis: https://github.com/f-ssemwanga
+* Luke: https://github.com/N20-Dev
+* LordNinth: https://github.com/LordNinth
+* Viktoria: https://github.com/Vikkk111
 
