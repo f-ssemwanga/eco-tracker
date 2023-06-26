@@ -3,29 +3,29 @@
 Eco-Tracker is a carbon footprint awareness project. It will calculate carbon emission using car model and distance travelled.
 
 
-##User stories
+## User stories
 
 -Feature 1: John travels  100km using petrol car. He can input 100km and click calculate to get carbon emission for his journey.
 
 -Feature 2: John wants to calculate carbon emission for a journey between 2 cities and save it. He can input 2 cities in journey page and click calculate. After the result is shown, he can save it for future reference.
-```
-##Getting Started
+
+## Getting Started
 git clone git@github.com:LordNinth/eco-tracker.git
 
 cd eco-tracker.git
 
 npm i
 npm run start
-````
 
-##Screenshots
 
-###Desktop
+## Screenshots
+
+### Desktop
 ![alt text](./images/eco-tracker.jpg)
 
-###Mobile 
+### Mobile 
 
-##Technologies and Frameworks
+## Technologies and Frameworks
 React
 Mui
 
