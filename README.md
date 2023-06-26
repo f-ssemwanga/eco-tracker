@@ -10,15 +10,13 @@ Eco-Tracker is a carbon footprint awareness project. It will calculate carbon em
 * Feature 2: John wants to calculate carbon emission for a journey between 2 cities and save it. He can input 2 cities in journey page and click calculate. After the result is shown, he can save it for future reference.
 
 ## Getting Started
-git clone git@github.com:LordNinth/eco-tracker.git
-
-cd eco-tracker.git
-
-npm i
-npm run start
-
+* git clone git@github.com:LordNinth/eco-tracker.git
+* cd eco-tracker.git
+* npm i
+* npm run start
 
 ## Screenshots
+![alt text](./images/eco-tracker.jpg)
 
 ### Desktop
 ![alt text](./images/eco-tracker.jpg)
@@ -28,7 +26,7 @@ npm run start
 ## Technologies and Frameworks
 * React
 * Mui
-
+* JS
 
 ## Contact me:
 * Francis: https://github.com/f-ssemwanga
