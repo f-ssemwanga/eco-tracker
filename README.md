@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# Eco-Tracker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Eco-Tracker is a carbon footprint awareness project. It will calculate carbon emission using car model and distance travelled.
 
-## Available Scripts
 
-In the project directory, you can run:
+##User stories
 
-### `npm start`
+-Feature 1: John travels  100km using petrol car. He can input 100km and click calculate to get carbon emission for his journey.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+-Feature 2: John wants to calculate carbon emission for a journey between 2 cities and save it. He can input 2 cities in journey page and click calculate. After the result is shown, he can save it for future reference.
+```
+##Getting Started
+git clone git@github.com:LordNinth/eco-tracker.git
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+cd eco-tracker.git
 
-### `npm test`
+npm i
+npm run start
+````
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+##Screenshots
 
-### `npm run build`
+###Desktop
+![alt text](./images/eco-tracker.jpg)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+###Mobile 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+##Technologies and Frameworks
+React
+Mui
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Contact me:
+-Francis: https://github.com/f-ssemwanga
+-Luke: https://github.com/N20-Dev
+-LordNinth: https://github.com/LordNinth
+-Viktoria: https://github.com/Vikkk111
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
