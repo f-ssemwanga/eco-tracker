@@ -9,7 +9,8 @@ import Button from "@mui/material/Button";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-export const CarbonForm = () => {
+
+export const CarbonForm = ({setValues}) => {
   // step 1  - define initial state values
   const initialValues = {
     fuelType: "car",
@@ -25,6 +26,8 @@ export const CarbonForm = () => {
   // 3. Define on submit handler function - depends on the app requirements
   const onSubmit = (values) => {
     console.log(values);
+   
+    setValues(values) 
   };
   // 4. Use the formik hook
   // 5. Map formik to the form components  using name property - it is dependent on app requirements
