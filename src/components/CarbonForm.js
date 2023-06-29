@@ -8,7 +8,7 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { useState } from "react";
+import FormHelperText from "@mui/material/FormHelperText";
 
 export const CarbonForm = ({ handleSubmit }) => {
   // step 1  - define initial state values
@@ -39,11 +39,16 @@ export const CarbonForm = ({ handleSubmit }) => {
     >
       <Stack component="form" onSubmit={formik.handleSubmit} spacing={3}>
         <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-label">Fuel</InputLabel>
+          {/* place holder inside field */}
+          <InputLabel id="fuelType">Select car</InputLabel>
           <Select
+            error={formik.touched.fuelType && !!formik.errors.fuelType}
+            onBlur={formik.handleBlur}
+            labelId="fuelType"
             className="mb-3"
             name="fuelType"
-            label="Fuel"
+            // name above field
+            label="Select Car"
             onChange={formik.handleChange}
             value={formik.values.fuelType}
           >
@@ -51,21 +56,26 @@ export const CarbonForm = ({ handleSubmit }) => {
             <MenuItem value="mediumDieselCar">Medium Diesel Car</MenuItem>
             <MenuItem value="largeDieselCar">Large Diesel Car</MenuItem>
             <MenuItem value="MediumHybridCar">Medium HybridCar </MenuItem>
-            
           </Select>
+          {formik.touched.fuelType && !!formik.errors.fuelType && (
+            <FormHelperText error>{formik.errors.fuelType}</FormHelperText> 
+          )}
         </FormControl>
         <TextField
+          error={formik.touched.distance && !!formik.errors.distance}
+          helperText={formik.touched.distance && formik.errors.distance}
           label="Distance"
           type="number"
           name="distance"
           onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
           value={formik.values.distance}
           InputLabelProps={{
             shrink: true,
           }}
         />
         <Button variant="contained" type="submit">
-          Contained
+          Calculate
         </Button>
       </Stack>
     </Box>
