@@ -1,83 +1,212 @@
-import { Stack } from "@mui/material";
-import Box from "@mui/material/Box";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
-import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
+import React from "react";
+import {
+  Box,
+  Stack,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
+  TextField,
+  Button,
+} from "@mui/material";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import FormHelperText from "@mui/material/FormHelperText";
+import axios from "axios";
 
-export const CarbonForm = ({ handleSubmit }) => {
-  // step 1  - define initial state values
+const CarFormSchema = Yup.object({
+  fuelType: Yup.string().required("Please select a fuel type"),
+  distance: Yup.number()
+    .required("Please enter a distance in KM")
+    .min(1, "Please enter a minimum distance of 1"),
+});
+
+const FlightFormSchema = Yup.object({
+  fuelType: Yup.string().required("Please select a flight type"),
+  distance: Yup.number()
+    .required("Please enter a distance in KM")
+    .min(1, "Please enter a minimum distance of 1"),
+});
+
+const CarOptions = [
+  { value: "SmallDieselCar", label: "Small Diesel Car" },
+  { value: "MediumDieselCar", label: "Medium Diesel Car" },
+  { value: "LargeDieselCar", label: "Large Diesel Car" },
+  { value: "MediumHybridCar", label: "Medium Hybrid Car" },
+  { value: "LargeHybridCar", label: "Large Hybrid Car" },
+  { value: "MediumLPGCar", label: "Medium LPG Car" },
+  { value: "LargeLPGCar", label: "Large LPG Car" },
+  { value: "MediumCNGCar", label: "Medium CNG Car" },
+  { value: "LargeCNGCar", label: "Large CNG Car" },
+  { value: "SmallPetrolVan", label: "Small Petrol Van" },
+  { value: "LargePetrolVan", label: "Large Petrol Van" },
+  { value: "SmallDielselVan", label: "Small Diesel Van" },
+  { value: "MediumDielselVan", label: "Medium Diesel Van" },
+  { value: "LargeDielselVan", label: "Large Diesel Van" },
+  { value: "LPGVan", label: "LPG Van" },
+  { value: "CNGVan", label: "CNG Van" },
+  { value: "SmallPetrolCar", label: "Small Petrol Car" },
+  { value: "MediumPetrolCar", label: "Medium Petrol Car" },
+  { value: "LargePetrolCar", label: "Large Petrol Car" },
+  { value: "SmallMotorBike", label: "Small Motor Bike" },
+  { value: "MediumMotorBike", label: "Medium Motor Bike" },
+  { value: "LargeMotorBike", label: "Large Motor Bike" },
+];
+
+const FlightOptions = [
+  { value: "DomesticFlight", label: "Domestic Flight" },
+  { value: "ShortEconomyClassFlight", label: "Short Economy Class Flight" },
+  { value: "ShortBusinessClassFlight", label: "Short Business Class Flight" },
+  { value: "LongEconomyClassFlight", label: "Long Economy Class Flight" },
+  { value: "LongPremiumClassFlight", label: "Long Premium Class Flight" },
+  { value: "LongBusinessClassFlight", label: "Long Business Class Flight" },
+  { value: "LongFirstClassFlight", label: "Long First Class Flight" },
+];
+
+const CarbonForm = ({ setCarbonData }) => {
   const initialValues = {
+    mode: "",
     fuelType: "",
     distance: "",
   };
-  // 2. Define validation schema for state values
-  const validationSchema = Yup.object({
-    fuelType: Yup.string().required("Please select a fuel type"),
-    distance: Yup.number()
-      .required("Please enter a distance in KM")
-      .min(1, "Please enter a minimum distance of 1"),
+
+  const validationSchema = Yup.object().shape({
+    mode: Yup.string().required("Please select a mode"),
+    ...CarFormSchema.fields,
+    ...FlightFormSchema.fields,
   });
-  // 3. Define on submit handler function - depends on the app requirements
-  const onSubmit = ({ fuelType, distance }) => {
-    handleSubmit(fuelType, distance);
+
+  const onSubmit = async (values) => {
+    let options;
+
+    if (values.mode === "car") {
+      options = {
+        method: "GET",
+        url: "https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel",
+        params: {
+          distance: values.distance,
+          vehicle: values.fuelType,
+        },
+        headers: {
+          "X-RapidAPI-Key": "Your API KEY",
+          "X-RapidAPI-Host": "carbonfootprint1.p.rapidapi.com",
+        },
+      };
+    } else if (values.mode === "flight") {
+      options = {
+        method: "GET",
+        url: "https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromFlight",
+        params: {
+          distance: values.distance,
+          type: values.fuelType,
+        },
+        headers: {
+          "X-RapidAPI-Key": "Your API KEY",
+          "X-RapidAPI-Host": "carbonfootprint1.p.rapidapi.com",
+        },
+      };
+    }
+
+    try {
+      const response = await axios.request(options);
+      setCarbonData({
+        carbonFootprint: response.data.carbonEquivalent,
+        distance: values.distance,
+      });
+    } catch (error) {
+      console.error(error);
+    }
   };
 
-  // 4. Use the formik hook
-  // 5. Map formik to the form components  using name property - it is dependent on app requirements
-  const formik = useFormik({ initialValues, validationSchema, onSubmit });
+  const formik = useFormik({
+    initialValues,
+    onSubmit,
+    validationSchema,
+  });
+
+  const handleModeChange = (event) => {
+    const selectedMode = event.target.value;
+    formik.resetForm();
+    formik.setFieldValue("mode", selectedMode);
+  };
+
   return (
-    <Box
-      sx={{
-        p: 2,
-      }}
-    >
+    <Box sx={{ p: 2 }}>
       <Stack component="form" onSubmit={formik.handleSubmit} spacing={3}>
         <FormControl fullWidth>
-          {/* place holder inside field */}
-          <InputLabel id="fuelType">Select car</InputLabel>
+          <InputLabel id="mode-label">Mode</InputLabel>
           <Select
-            error={formik.touched.fuelType && !!formik.errors.fuelType}
-            onBlur={formik.handleBlur}
-            labelId="fuelType"
-            className="mb-3"
-            name="fuelType"
-            // name above field
-            label="Select Car"
-            onChange={formik.handleChange}
-            value={formik.values.fuelType}
+            labelId="mode-label"
+            id="mode"
+            name="mode"
+            value={formik.values.mode}
+            onChange={handleModeChange}
+            error={formik.touched.mode && Boolean(formik.errors.mode)}
+            helperText={formik.touched.mode && formik.errors.mode}
           >
-            <MenuItem value="smallDieselCar">Small Diesel Car</MenuItem>
-            <MenuItem value="mediumDieselCar">Medium Diesel Car</MenuItem>
-            <MenuItem value="largeDieselCar">Large Diesel Car</MenuItem>
-            <MenuItem value="MediumHybridCar">Medium HybridCar </MenuItem>
+            <MenuItem value="">Select Mode</MenuItem>
+            <MenuItem value="car">Car</MenuItem>
+            <MenuItem value="flight">Flight</MenuItem>
           </Select>
-          {formik.touched.fuelType && !!formik.errors.fuelType && (
-            <FormHelperText error>{formik.errors.fuelType}</FormHelperText> 
-          )}
         </FormControl>
+        {formik.values.mode === "car" && (
+          <FormControl fullWidth>
+            <InputLabel id="fuel-type-label">Fuel Type</InputLabel>
+            <Select
+              labelId="fuel-type-label"
+              id="fuelType"
+              name="fuelType"
+              value={formik.values.fuelType}
+              onChange={formik.handleChange}
+              error={formik.touched.fuelType && Boolean(formik.errors.fuelType)}
+              helperText={formik.touched.fuelType && formik.errors.fuelType}
+            >
+              <MenuItem value="">Select Fuel Type</MenuItem>
+              {CarOptions.map((option) => (
+                <MenuItem key={option.value} value={option.value}>
+                  {option.label}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        )}
+        {formik.values.mode === "flight" && (
+          <FormControl fullWidth>
+            <InputLabel id="flight-type-label">Flight Type</InputLabel>
+            <Select
+              labelId="flight-type-label"
+              id="fuelType"
+              name="fuelType"
+              value={formik.values.fuelType}
+              onChange={formik.handleChange}
+              error={formik.touched.fuelType && Boolean(formik.errors.fuelType)}
+              helperText={formik.touched.fuelType && formik.errors.fuelType}
+            >
+              <MenuItem value="">Select Flight Type</MenuItem>
+              {FlightOptions.map((option) => (
+                <MenuItem key={option.value} value={option.value}>
+                  {option.label}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        )}
+
         <TextField
-          error={formik.touched.distance && !!formik.errors.distance}
-          helperText={formik.touched.distance && formik.errors.distance}
-          label="Distance"
+          label="Distance (KM)"
           type="number"
+          id="distance"
           name="distance"
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
           value={formik.values.distance}
-          InputLabelProps={{
-            shrink: true,
-          }}
+          onChange={formik.handleChange}
+          error={formik.touched.distance && Boolean(formik.errors.distance)}
+          helperText={formik.touched.distance && formik.errors.distance}
         />
         <Button variant="contained" type="submit">
-          Calculate
+          Submit
         </Button>
       </Stack>
     </Box>
   );
 };
+
+export default CarbonForm;
