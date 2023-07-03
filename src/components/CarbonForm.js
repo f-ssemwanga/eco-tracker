@@ -99,12 +99,9 @@ const CarbonForm = ({ onFormSubmit }) => {
         >
           <InputLabel id="mode-label">Mode</InputLabel>
           <Select
-            helperText={formik.touched.mode && formik.errors.mode}
-            error={formik.touched.mode && !!formik.errors.mode}
             labelId="mode-label"
             id="mode"
             name="mode"
-            label="mode"
             value={formik.values.mode}
             onChange={handleModeChange}
           >
@@ -123,12 +120,9 @@ const CarbonForm = ({ onFormSubmit }) => {
           >
             <InputLabel id="fuel-type-label">Fuel Type</InputLabel>
             <Select
-              helperText={formik.touched.fuelType && formik.errors.fuelType}
-              error={formik.touched.fuelType && !!(formik.errors.fuelType)}
               labelId="fuel-type-label"
               id="fuelType"
               name="fuelType"
-              label="fuelType"
               value={formik.values.fuelType}
               onChange={formik.handleChange}
             >
@@ -171,15 +165,14 @@ const CarbonForm = ({ onFormSubmit }) => {
         )}
 
         <TextField
-          label="Distance (KM)"
-          type="number"
           id="distance"
           name="distance"
           label="Distance in KM"
           fullWidth
           value={formik.values.distance}
           onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
+          error={formik.touched.distance && Boolean(formik.errors.distance)}
+          helperText={formik.touched.distance && formik.errors.distance}
         />
         <Button color="primary" variant="contained" type="submit">
           Calculate
@@ -190,4 +183,3 @@ const CarbonForm = ({ onFormSubmit }) => {
 };
 
 export default CarbonForm;
-
