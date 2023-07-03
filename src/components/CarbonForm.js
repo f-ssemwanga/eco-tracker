@@ -13,6 +13,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 
+
 const CarFormSchema = Yup.object({
   fuelType: Yup.string().required("Please select a fuel type"),
   distance: Yup.number()
@@ -135,13 +136,15 @@ const CarbonForm = ({ setCarbonData }) => {
         <FormControl fullWidth>
           <InputLabel id="mode-label">Mode</InputLabel>
           <Select
+            helperText={formik.touched.mode && formik.errors.mode}
+            error={formik.touched.mode && !!formik.errors.mode}
             labelId="mode-label"
             id="mode"
             name="mode"
+            label="mode"
             value={formik.values.mode}
             onChange={handleModeChange}
-            error={formik.touched.mode && Boolean(formik.errors.mode)}
-            helperText={formik.touched.mode && formik.errors.mode}
+            onBlur={formik.handleBlur}
           >
             <MenuItem value="">Select Mode</MenuItem>
             <MenuItem value="car">Car</MenuItem>
@@ -152,13 +155,15 @@ const CarbonForm = ({ setCarbonData }) => {
           <FormControl fullWidth>
             <InputLabel id="fuel-type-label">Fuel Type</InputLabel>
             <Select
+              helperText={formik.touched.fuelType && formik.errors.fuelType}
+              error={formik.touched.fuelType && !!(formik.errors.fuelType)}
               labelId="fuel-type-label"
               id="fuelType"
               name="fuelType"
+              label="fuelType"
               value={formik.values.fuelType}
               onChange={formik.handleChange}
-              error={formik.touched.fuelType && Boolean(formik.errors.fuelType)}
-              helperText={formik.touched.fuelType && formik.errors.fuelType}
+              onBlur={formik.handleBlur}
             >
               <MenuItem value="">Select Fuel Type</MenuItem>
               {CarOptions.map((option) => (
@@ -192,14 +197,15 @@ const CarbonForm = ({ setCarbonData }) => {
         )}
 
         <TextField
+          error={formik.touched.distance && !!formik.errors.distance}
+          helperText={formik.touched.distance && formik.errors.distance}
           label="Distance (KM)"
           type="number"
           id="distance"
           name="distance"
           value={formik.values.distance}
           onChange={formik.handleChange}
-          error={formik.touched.distance && Boolean(formik.errors.distance)}
-          helperText={formik.touched.distance && formik.errors.distance}
+          onBlur={formik.handleBlur}
         />
         <Button variant="contained" type="submit">
           Submit
@@ -210,3 +216,4 @@ const CarbonForm = ({ setCarbonData }) => {
 };
 
 export default CarbonForm;
+
