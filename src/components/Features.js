@@ -3,8 +3,9 @@ import "../index.css";
 
 export const Features = () => {
   return (
+    
     <div className="features-section">
-      <h2>Features of Our Carbon Footprint Calculator</h2>
+      <h2>Features</h2>
       <div className="features-container">
         <div className="feature">
           <h3>Vehicle Emissions</h3>
