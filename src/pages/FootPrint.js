@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Grid } from "@mui/material";
 import CarbonForm from "../components/CarbonForm";
 import CarbonResult from "../components/CarbonResult";
+import Trees from "../components/Trees";
 import axios from "axios";
 
 const Footprint = () => {
@@ -19,13 +20,15 @@ const Footprint = () => {
     };
 
     if (values.mode === "car") {
-      options.url = "https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel";
+      options.url =
+        "https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel";
       options.params = {
         distance: values.distance,
         vehicle: values.fuelType,
       };
     } else if (values.mode === "flight") {
-      options.url = "https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromFlight";
+      options.url =
+        "https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromFlight";
       options.params = {
         distance: values.distance,
         type: values.fuelType,
@@ -51,6 +54,7 @@ const Footprint = () => {
       {carbonData && (
         <Grid item xs={12} sm={6}>
           <CarbonResult carbonFootprint={carbonData?.carbonFootprint} />
+          <Trees co2eResult={carbonData?.carbonFootprint} />{" "}
         </Grid>
       )}
     </Grid>
