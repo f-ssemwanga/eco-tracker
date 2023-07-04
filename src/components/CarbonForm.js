@@ -102,6 +102,7 @@ const CarbonForm = ({ onFormSubmit }) => {
             labelId="mode-label"
             id="mode"
             name="mode"
+            label ="mode"
             value={formik.values.mode}
             onChange={handleModeChange}
           >
@@ -123,6 +124,7 @@ const CarbonForm = ({ onFormSubmit }) => {
               labelId="fuel-type-label"
               id="fuelType"
               name="fuelType"
+              label = "fuelType"
               value={formik.values.fuelType}
               onChange={formik.handleChange}
             >
