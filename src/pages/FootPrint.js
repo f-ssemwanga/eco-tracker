@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
+import { Banner } from "../components/Banner";
+import Alert from "@mui/material/Alert";
 
 import CarbonForm from "../components/CarbonForm";
 import CarbonResult from "../components/CarbonResult";
@@ -50,6 +52,13 @@ const Footprint = () => {
 
   return (
     <Stack spacing={3}>
+      <Banner title="Eco Calculator!" />
+      <Alert severity="info">
+        To use the calculator, select a mode (Car or Flight), enter the distance
+        of your journey, and choose the fuel or flight type. The calculator will
+        then show you the carbon footprint of your journey and how many trees
+        would need to be planted to offset it.
+      </Alert>
       <Grid container spacing={2}>
         <Grid item xs={12} sm={12} md={6}>
           <CarbonForm onFormSubmit={handleFormSubmit} />
