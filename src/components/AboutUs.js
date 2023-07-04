@@ -5,6 +5,7 @@ import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 
 import FrancisSemwanga from "../images/francis-semwanga.png";
+import ViktoriaMoskalenko from "../images/viktoria-moskalenko.jpg";
 
 export const AboutUs = () => {
   return (
@@ -36,7 +37,7 @@ export const AboutUs = () => {
             <Link href="https://github.com/f-ssemwanga">
               <Avatar
                 alt="Francis Ssemwanga"
-                src={FrancisSemwanga}
+                src={ViktoriaMoskalenko}
                 sx={{ width: 112, height: 112, marginBottom: 2 }}
               />
               <Typography variant="caption" sx={{ textAlign: "center" }}>
