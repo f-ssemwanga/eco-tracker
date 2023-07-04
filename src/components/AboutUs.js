@@ -1,45 +1,90 @@
-import AccountBoxIcon from "@mui/icons-material/AccountBox";
-import Icon from "@mui/material/Icon";
 import Stack from "@mui/material/Stack";
 import Avatar from "@mui/material/Avatar";
 import Link from "@mui/material/Link";
-import Container from "@mui/material/Container";
+import Paper from "@mui/material/Paper";
+import Typography from "@mui/material/Typography";
+
+import FrancisSemwanga from "../images/francis-semwanga.png";
 
 export const AboutUs = () => {
   return (
-    <Container >
-      {/* to be centred later */}
-      <h1>About Us</h1>
-      <Stack
-        direction={{ xs: "column", sm: "row" }}
-        justifyContent="space-evenly"
-        spacing={2}
-      >
-        <Stack alignItems="center">
-          <Avatar alt="Francis Ssemwanga " src="/static/images/avatar/2.jpg" />
-          <Link href="https://github.com/f-ssemwanga">Francis Ssemwanga</Link>
-        </Stack>
+    <Paper elevation={3}>
+      <Stack spacing={5} sx={{ p: 5, backgroundColor: "#f6f6f6" }}>
+        <Typography component="h2" variant="h4" sx={{ textAlign: "center" }}>
+          About Us
+        </Typography>
+        <Stack
+          direction={{ xs: "column", sm: "column", md: "row" }}
+          justifyContent="space-evenly"
+          alignItems={{ xs: "center", sm: "center", md: "flex-start" }}
+          spacing={3}
+        >
+          <Stack alignItems="center" spacing={2}>
+            <Link href="https://github.com/f-ssemwanga">
+              <Avatar
+                alt="Francis Ssemwanga"
+                src={FrancisSemwanga}
+                sx={{ width: 112, height: 112, marginBottom: 2 }}
+              />
+              <Typography variant="caption" sx={{ textAlign: "center" }}>
+                Francis Ssemwanga
+              </Typography>
+            </Link>
+          </Stack>
 
-        <Stack alignItems="center">
-          <Avatar alt="Kourtney Queeley " src="/static/images/avatar/2.jpg" />
-          <Link href="https://github.com/Kourtneyq2">Kourtney Queeley</Link>
-        </Stack>
+          <Stack alignItems="center" spacing={2}>
+            <Link href="https://github.com/f-ssemwanga">
+              <Avatar
+                alt="Francis Ssemwanga"
+                src={FrancisSemwanga}
+                sx={{ width: 112, height: 112, marginBottom: 2 }}
+              />
+              <Typography variant="caption" sx={{ textAlign: "center" }}>
+                Francis Ssemwanga
+              </Typography>
+            </Link>
+          </Stack>
 
-        <Stack alignItems="center">
-          <Avatar alt="Luke Craven" src="/static/images/avatar/2.jpg" />
-          <Link href="https://github.com/N20-Dev">Luke Craven </Link>
-        </Stack>
+          <Stack alignItems="center" spacing={2}>
+            <Link href="https://github.com/f-ssemwanga">
+              <Avatar
+                alt="Francis Ssemwanga"
+                src={FrancisSemwanga}
+                sx={{ width: 112, height: 112, marginBottom: 2 }}
+              />
+              <Typography variant="caption" sx={{ textAlign: "center" }}>
+                Francis Ssemwanga
+              </Typography>
+            </Link>
+          </Stack>
 
-        <Stack alignItems="center">
-          <Avatar alt="Rosh Rai " src="/static/images/avatar/2.jpg" />
-          <Link href="https://github.com/LordNinth">Rosh Rai</Link>
-        </Stack>
+          <Stack alignItems="center" spacing={2}>
+            <Link href="https://github.com/f-ssemwanga">
+              <Avatar
+                alt="Francis Ssemwanga"
+                src={FrancisSemwanga}
+                sx={{ width: 112, height: 112, marginBottom: 2 }}
+              />
+              <Typography variant="caption" sx={{ textAlign: "center" }}>
+                Francis Ssemwanga
+              </Typography>
+            </Link>
+          </Stack>
 
-        <Stack alignItems="center">
-          <Avatar alt="Viktoria Moskalenko" src="/static/images/avatar/2.jpg" />
-          <Link href="https://github.com/Vikkk111">Viktoria Moskalenko</Link>
+          <Stack alignItems="center" spacing={2}>
+            <Link href="https://github.com/f-ssemwanga">
+              <Avatar
+                alt="Francis Ssemwanga"
+                src={FrancisSemwanga}
+                sx={{ width: 112, height: 112, marginBottom: 2 }}
+              />
+              <Typography variant="caption" sx={{ textAlign: "center" }}>
+                Francis Ssemwanga
+              </Typography>
+            </Link>
+          </Stack>
         </Stack>
       </Stack>
-    </Container>
+    </Paper>
   );
 };

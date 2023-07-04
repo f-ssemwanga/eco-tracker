@@ -9,7 +9,7 @@ export const Banner = ({ title, subTitle }) => {
         alignContent="center"
         alignItems="center"
         spacing={2}
-        sx={{ p: 2 }}
+        sx={{ py: 6 }}
       >
         <Typography component="h1" variant="h3">
           {title}

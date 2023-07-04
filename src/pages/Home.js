@@ -1,17 +1,18 @@
+import { Stack } from "@mui/material";
+
 import { Features } from "../components/Features";
 import { AboutUs } from "../components/AboutUs";
 import { Banner } from "../components/Banner";
 
-
 export const Home = () => {
   return (
-    <div>
-      <Banner 
-      title="Welcome to Eco Footprint!"
-      subTitle= "Saving our planet together"
+    <Stack spacing={3}>
+      <Banner
+        title="Welcome to Eco Footprint!"
+        subTitle="Saving our planet together"
       />
       <Features />
       <AboutUs />
-    </div>
+    </Stack>
   );
 };
