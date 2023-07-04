@@ -1,5 +1,6 @@
 import React from "react";
-import { Paper, Typography } from "@mui/material";
+import { Paper, Typography, Stack } from "@mui/material";
+import ParkIcon from "@mui/icons-material/Park";
 
 const TREES_CO2_ABSORPTION_PER_YEAR_KG = 22;
 
@@ -8,10 +9,21 @@ const Trees = ({ co2eResult }) => {
 
   return (
     <Paper elevation={3} sx={{ p: 2, mt: 2 }}>
-      <Typography variant="body1">
-        To offset this carbon footprint, approximately{" "}
-        {numberOfTreesToOffset.toFixed(2)} trees would need to be planted.
-      </Typography>
+      <Stack spacing={2}>
+        <Typography component="h2" variant="h4">
+          Trees
+        </Typography>
+        <Stack direction="row" alignItems="center" spacing={2}>
+          <ParkIcon />
+          <Typography variant="h5">
+            {numberOfTreesToOffset.toFixed(2)}
+          </Typography>
+        </Stack>
+        <Typography variant="caption">
+          Number of trees required to offset the above mentioned carbon
+          emissions.
+        </Typography>
+      </Stack>
     </Paper>
   );
 };

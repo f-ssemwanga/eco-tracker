@@ -1,16 +1,18 @@
 import React, { useState } from "react";
-import { Grid } from "@mui/material";
+import axios from "axios";
+import Grid from "@mui/material/Grid";
+import Stack from "@mui/material/Stack";
+
 import CarbonForm from "../components/CarbonForm";
 import CarbonResult from "../components/CarbonResult";
 import Trees from "../components/Trees";
-import axios from "axios";
 
 const Footprint = () => {
   const [carbonData, setCarbonData] = useState(null);
 
   const handleFormSubmit = async (values) => {
     const commonHeaders = {
-      "X-RapidAPI-Key": process.env.REACT_APP_RAPIDAPI_KEY,
+      "X-RapidAPI-Key": process.env.REACT_APP_X_RAPID_API_KEY,
       "X-RapidAPI-Host": "carbonfootprint1.p.rapidapi.com",
     };
 
@@ -47,17 +49,19 @@ const Footprint = () => {
   };
 
   return (
-    <Grid container spacing={2}>
-      <Grid item xs={12} sm={6}>
-        <CarbonForm onFormSubmit={handleFormSubmit} />
-      </Grid>
-      {carbonData && (
-        <Grid item xs={12} sm={6}>
-          <CarbonResult carbonFootprint={carbonData?.carbonFootprint} />
-          <Trees co2eResult={carbonData?.carbonFootprint} />{" "}
+    <Stack spacing={3}>
+      <Grid container spacing={2}>
+        <Grid item xs={12} sm={12} md={6}>
+          <CarbonForm onFormSubmit={handleFormSubmit} />
         </Grid>
-      )}
-    </Grid>
+        {carbonData && (
+          <Grid item xs={12} sm={12} md={6}>
+            <CarbonResult carbonFootprint={carbonData?.carbonFootprint} />
+          </Grid>
+        )}
+      </Grid>
+      {carbonData && <Trees co2eResult={carbonData?.carbonFootprint} />}
+    </Stack>
   );
 };
 
