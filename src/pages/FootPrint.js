@@ -4,13 +4,17 @@ import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
 import { Banner } from "../components/Banner";
 import Alert from "@mui/material/Alert";
+import Button from "@mui/material/Button";
+import { v4 as uuidv4 } from "uuid";
 
 import CarbonForm from "../components/CarbonForm";
 import CarbonResult from "../components/CarbonResult";
 import Trees from "../components/Trees";
+import { getFromLocalStorage } from "../utils/getFromLocalStorage";
 
-const Footprint = () => {
+export const FootPrint = () => {
   const [carbonData, setCarbonData] = useState(null);
+  const [saved, setSaved] = useState(false);
 
   const handleFormSubmit = async (values) => {
     const commonHeaders = {
@@ -44,12 +48,29 @@ const Footprint = () => {
       setCarbonData({
         carbonFootprint: response.data.carbonEquivalent,
         distance: values.distance,
+        mode: values.mode,
+        fuelType: values.fuelType,
+        trees: response.data.carbonEquivalent / 22,
       });
+      setSaved(false);
     } catch (error) {
       console.error(error);
     }
   };
 
+  const handleSaveToStorage = () => {
+    const newRecord = {
+      ...carbonData,
+      id: uuidv4(),
+    };
+    // get data from local storage
+    const itemsFromLS = getFromLocalStorage("journeys");
+    // put new item in the array
+    const newItems = [newRecord, ...itemsFromLS];
+    // putting data back to local storage
+    localStorage.setItem("journeys", JSON.stringify(newItems));
+    setSaved(true);
+  };
   return (
     <Stack spacing={3}>
       <Banner title="Eco Calculator!" />
@@ -59,7 +80,7 @@ const Footprint = () => {
         then show you the carbon footprint of your journey and how many trees
         would need to be planted to offset it.
       </Alert>
-      <Grid container spacing={2}>
+      <Grid container spacing={0}>
         <Grid item xs={12} sm={12} md={6}>
           <CarbonForm onFormSubmit={handleFormSubmit} />
         </Grid>
@@ -69,9 +90,20 @@ const Footprint = () => {
           </Grid>
         )}
       </Grid>
-      {carbonData && <Trees co2eResult={carbonData?.carbonFootprint} />}
+      {carbonData && (
+        <Stack spacing={3}>
+          <Trees co2eResult={carbonData?.carbonFootprint} />
+          <Button
+            variant="contained"
+            color="success"
+            sx={{ "& .MuiButton-root": { width: 100 } }}
+            onClick={handleSaveToStorage}
+            disabled={saved}
+          >
+            Save Journey to Favourites
+          </Button>
+        </Stack>
+      )}
     </Stack>
   );
 };
-
-export default Footprint;
