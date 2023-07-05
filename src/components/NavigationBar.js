@@ -27,11 +27,11 @@ export const NavigationBar = () => {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{ backgroundColor: "#2E7D32" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Drawer anchor="top" open={isOpen} onClose={handleCloseDrawer}>
-            <List>
+            <List sx={{ backgroundColor: "#2E7D32" }}>
               <ListItem disablePadding>
                 <ListItemButton
                   onClick={() => {
@@ -39,7 +39,7 @@ export const NavigationBar = () => {
                     navigate("/");
                   }}
                 >
-                  <ListItemText primary="Home" />
+                  <ListItemText sx={{ color: "#FFFFFF" }} primary="Home" />
                 </ListItemButton>
               </ListItem>
               <ListItem disablePadding>
@@ -49,7 +49,7 @@ export const NavigationBar = () => {
                     navigate("/footprint");
                   }}
                 >
-                  <ListItemText primary="Footprint" />
+                  <ListItemText sx={{ color: "#FFFFFF" }} primary="Footprint" />
                 </ListItemButton>
               </ListItem>
               <ListItem disablePadding>
@@ -59,7 +59,7 @@ export const NavigationBar = () => {
                     navigate("/journey");
                   }}
                 >
-                  <ListItemText primary="Journey" />
+                  <ListItemText sx={{ color: "#FFFFFF" }} primary="Journey" />
                 </ListItemButton>
               </ListItem>
             </List>

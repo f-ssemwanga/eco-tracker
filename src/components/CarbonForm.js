@@ -47,8 +47,7 @@ const FlightOptions = [
   { value: "LongBusinessClassFlight", label: "Long Business Class Flight" },
   { value: "LongFirstClassFlight", label: "Long First Class Flight" },
 ];
-
-const CarbonForm = ({ onFormSubmit }) => {
+export const CarbonForm = ({ onFormSubmit }) => {
   const initialValues = {
     mode: "",
     fuelType: "",
@@ -102,7 +101,7 @@ const CarbonForm = ({ onFormSubmit }) => {
             labelId="mode-label"
             id="mode"
             name="mode"
-            label ="mode"
+            label="mode"
             value={formik.values.mode}
             onChange={handleModeChange}
           >
@@ -124,7 +123,7 @@ const CarbonForm = ({ onFormSubmit }) => {
               labelId="fuel-type-label"
               id="fuelType"
               name="fuelType"
-              label = "fuelType"
+              label="fuelType"
               value={formik.values.fuelType}
               onChange={formik.handleChange}
             >
@@ -176,7 +175,7 @@ const CarbonForm = ({ onFormSubmit }) => {
           error={formik.touched.distance && Boolean(formik.errors.distance)}
           helperText={formik.touched.distance && formik.errors.distance}
         />
-        <Button color="primary" variant="contained" type="submit">
+        <Button color="success" variant="contained" type="submit">
           Calculate
         </Button>
       </Stack>

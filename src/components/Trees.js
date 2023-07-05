@@ -8,7 +8,7 @@ const Trees = ({ co2eResult }) => {
   const numberOfTreesToOffset = co2eResult / TREES_CO2_ABSORPTION_PER_YEAR_KG;
 
   return (
-    <Paper elevation={3} sx={{ p: 2, mt: 2 }}>
+    <Paper elevation={3} sx={{ p: 2, mt: 2, backgroundColor: "#f6f6f6" }}>
       <Stack spacing={2}>
         <Typography component="h2" variant="h4">
           Trees
