@@ -26,7 +26,11 @@ const JourneyCard = ({ journey, onDelete }) => {
         <Typography variant="body2" color="text.secondary">
           Trees Needed for Offset: {journey.trees.toFixed(2)}
         </Typography>
-        <Button color="secondary" onClick={() => onDelete(journey.id)}>
+        <Button
+          variant="outlined"
+          color="error"
+          onClick={() => onDelete(journey.id)}
+        >
           Delete
         </Button>
       </CardContent>
