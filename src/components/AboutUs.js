@@ -6,7 +6,9 @@ import Typography from "@mui/material/Typography";
 
 import FrancisSemwanga from "../images/francis-semwanga.png";
 import ViktoriaMoskalenko from "../images/viktoria-moskalenko.jpg";
-
+import KourtneyQueeley from "../images/kourtney-queeley.png";
+import RoshanRai from "../images/roshan-rai.png";
+import LukeCraven from "../images/luke-craven.png";
 export const AboutUs = () => {
   return (
     <Paper elevation={3}>
@@ -36,51 +38,55 @@ export const AboutUs = () => {
           <Stack alignItems="center" spacing={2}>
             <Link href="https://github.com/f-ssemwanga">
               <Avatar
-                alt="Francis Ssemwanga"
+                alt="Viktoria Moskalenko"
                 src={ViktoriaMoskalenko}
                 sx={{ width: 112, height: 112, marginBottom: 2 }}
               />
               <Typography variant="caption" sx={{ textAlign: "center" }}>
-                Francis Ssemwanga
+                Viktoria Moskalenko
               </Typography>
             </Link>
           </Stack>
 
           <Stack alignItems="center" spacing={2}>
-            <Link href="https://github.com/f-ssemwanga">
+            <Link href="https://github.com/Kourtneyq2">
               <Avatar
-                alt="Francis Ssemwanga"
-                src={FrancisSemwanga}
+                alt="Kourtney Queeley"
+                src={KourtneyQueeley}
                 sx={{ width: 112, height: 112, marginBottom: 2 }}
               />
               <Typography variant="caption" sx={{ textAlign: "center" }}>
-                Francis Ssemwanga
+                Kourtney Queeley
               </Typography>
             </Link>
           </Stack>
 
           <Stack alignItems="center" spacing={2}>
-            <Link href="https://github.com/f-ssemwanga">
+            <Link href="https://github.com/LordNinth">
               <Avatar
-                alt="Francis Ssemwanga"
-                src={FrancisSemwanga}
+                alt="Roshan Rai"
+                src={RoshanRai}
                 sx={{ width: 112, height: 112, marginBottom: 2 }}
               />
-              <Typography variant="caption" sx={{ textAlign: "center" }}>
-                Francis Ssemwanga
+              <Typography variant="caption" sx={{ textAlign: "center", p: 3 }}>
+                Roshan Rai
               </Typography>
             </Link>
           </Stack>
 
           <Stack alignItems="center" spacing={2}>
-            <Link href="https://github.com/f-ssemwanga">
+            <Link href="https://github.com/N20-Dev">
               <Avatar
-                alt="Francis Ssemwanga"
-                src={FrancisSemwanga}
-                sx={{ width: 112, height: 112, marginBottom: 2 }}
+                alt="Luke Craven"
+                src={LukeCraven}
+                sx={{
+                  width: 112,
+                  height: 112,
+                  marginBottom: 2,
+                }}
               />
-              <Typography variant="caption" sx={{ textAlign: "center" }}>
-                Francis Ssemwanga
+              <Typography variant="caption" sx={{ textAlign: "center", p: 3 }}>
+                Luke Craven
               </Typography>
             </Link>
           </Stack>
