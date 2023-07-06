@@ -3,12 +3,20 @@ import Avatar from "@mui/material/Avatar";
 import Link from "@mui/material/Link";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
+import { sxTheme } from "../utils/sxTheme";
 
 import FrancisSemwanga from "../images/francis-semwanga.png";
 import ViktoriaMoskalenko from "../images/viktoria-moskalenko.jpg";
 import KourtneyQueeley from "../images/kourtney-queeley.png";
 import RoshanRai from "../images/roshan-rai.png";
 import LukeCraven from "../images/luke-craven.png";
+const profStyle = {
+  color: sxTheme.color,
+  fontSize: sxTheme.fontSize,
+  display: sxTheme.display,
+  flexDirection: sxTheme.flexDirection,
+  alignItems: sxTheme.alignItems,
+};
 export const AboutUs = () => {
   return (
     <Paper elevation={3}>
@@ -23,69 +31,90 @@ export const AboutUs = () => {
           spacing={3}
         >
           <Stack alignItems="center" spacing={2}>
-            <Link href="https://github.com/f-ssemwanga">
+            <Link
+              href="https://github.com/f-ssemwanga"
+              underline="none"
+              sx={profStyle}
+            >
               <Avatar
                 alt="Francis Ssemwanga"
                 src={FrancisSemwanga}
                 sx={{ width: 112, height: 112, marginBottom: 2 }}
               />
-              <Typography variant="caption" sx={{ textAlign: "center" }}>
+              <Typography variant="h3" sx={sxTheme.typography.h2}>
                 Francis Ssemwanga
               </Typography>
             </Link>
           </Stack>
 
           <Stack alignItems="center" spacing={2}>
-            <Link href="https://github.com/f-ssemwanga">
+            <Link
+              href="https://github.com/Vikkk111"
+              underline="none"
+              sx={{
+                color: "#008c00",
+                fontSize: "1.2rem",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
+            >
               <Avatar
                 alt="Viktoria Moskalenko"
                 src={ViktoriaMoskalenko}
                 sx={{ width: 112, height: 112, marginBottom: 2 }}
               />
-              <Typography variant="caption" sx={{ textAlign: "center" }}>
+              <Typography variant="h3" sx={sxTheme.typography.h2}>
                 Viktoria Moskalenko
               </Typography>
             </Link>
           </Stack>
-
           <Stack alignItems="center" spacing={2}>
-            <Link href="https://github.com/Kourtneyq2">
+            <Link
+              href="https://github.com/Kourtneyq2"
+              underline="none"
+              sx={profStyle}
+            >
               <Avatar
                 alt="Kourtney Queeley"
                 src={KourtneyQueeley}
                 sx={{ width: 112, height: 112, marginBottom: 2 }}
               />
-              <Typography variant="caption" sx={{ textAlign: "center" }}>
+              <Typography variant="h3" sx={sxTheme.typography.h2}>
                 Kourtney Queeley
               </Typography>
             </Link>
           </Stack>
 
           <Stack alignItems="center" spacing={2}>
-            <Link href="https://github.com/LordNinth">
+            <Link
+              href="https://github.com/LordNinth"
+              underline="none"
+              sx={profStyle}
+            >
               <Avatar
                 alt="Roshan Rai"
                 src={RoshanRai}
                 sx={{ width: 112, height: 112, marginBottom: 2 }}
               />
-              <Typography variant="caption" sx={{ textAlign: "center", p: 3 }}>
+              <Typography variant="h3" sx={sxTheme.typography.h2}>
                 Roshan Rai
               </Typography>
             </Link>
           </Stack>
 
           <Stack alignItems="center" spacing={2}>
-            <Link href="https://github.com/N20-Dev">
+            <Link
+              href="https://github.com/N20-Dev"
+              underline="none"
+              sx={profStyle}
+            >
               <Avatar
                 alt="Luke Craven"
                 src={LukeCraven}
-                sx={{
-                  width: 112,
-                  height: 112,
-                  marginBottom: 2,
-                }}
+                sx={{ width: 112, height: 112, marginBottom: 2 }}
               />
-              <Typography variant="caption" sx={{ textAlign: "center", p: 3 }}>
+              <Typography variant="h3" sx={sxTheme.typography.h2}>
                 Luke Craven
               </Typography>
             </Link>
