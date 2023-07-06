@@ -8,7 +8,7 @@ Eco-Tracker is a carbon footprint awareness project. It calculates carbon emissi
 
 - Feature 2: John can see the equivalent number of trees he must plant to offset his carbon emissions
 - Feature 3: John can save his favourite journies to local storage
-- Feature 5.  John can delete unwanted journies from local storage.
+- Feature 4.  John can delete unwanted journies from local storage.
 
 ## Getting Started
 
