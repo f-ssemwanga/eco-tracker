@@ -7,8 +7,8 @@ import Alert from "@mui/material/Alert";
 import Button from "@mui/material/Button";
 import { v4 as uuidv4 } from "uuid";
 
-import CarbonForm from "../components/CarbonForm";
-import CarbonResult from "../components/CarbonResult";
+import { CarbonForm } from "../components/CarbonForm";
+import { CarbonResult } from "../components/CarbonResult";
 import Trees from "../components/Trees";
 import { getFromLocalStorage } from "../utils/getFromLocalStorage";
 

@@ -182,5 +182,3 @@ export const CarbonForm = ({ onFormSubmit }) => {
     </Box>
   );
 };
-
-export default CarbonForm;

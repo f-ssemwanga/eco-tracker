@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
-import JourneyCard from "../components/JourneyCard";
+import { JourneyCard } from "../components/JourneyCard";
 import { Banner } from "../components/Banner";
 
 export const Journey = () => {
@@ -20,11 +20,30 @@ export const Journey = () => {
 
   return (
     <Stack spacing={3}>
-      <Banner title="Your Saved Journeys" />
-      <Grid container spacing={3}>
-        {journeys.map((journey) => (
-          <Grid item xs={12} sm={6} md={4} key={journey.id}>
-            <JourneyCard journey={journey} onDelete={handleDelete} />
+      {journeys.length > 0 ? (
+        <Banner title="Your Saved Journeys" />
+      ) : (
+        <Banner title="No Saved Journeys" />
+      )}
+
+      <Grid container spacing={3} justifyContent={"space-between"}>
+        {journeys.map((journey, index) => (
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            md={4}
+            key={journey.id}
+            sx={{
+              marginLeft: "-1.5em",
+              marginRight: "1.2em",
+            }}
+          >
+            <JourneyCard
+              journey={journey}
+              count={index + 1}
+              onDelete={handleDelete}
+            />
           </Grid>
         ))}
       </Grid>

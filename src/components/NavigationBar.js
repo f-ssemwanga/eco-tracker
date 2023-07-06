@@ -27,11 +27,14 @@ export const NavigationBar = () => {
   };
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: "#2E7D32" }}>
+    <AppBar
+      position="static"
+      sx={{ backgroundColor: "rgba(46, 125, 50, 0.8)" }}
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Drawer anchor="top" open={isOpen} onClose={handleCloseDrawer}>
-            <List sx={{ backgroundColor: "#2E7D32" }}>
+            <List sx={{ backgroundColor: "rgba(46, 125, 50, 0.8)" }}>
               <ListItem disablePadding>
                 <ListItemButton
                   onClick={() => {

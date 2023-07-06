@@ -1,7 +1,7 @@
 import React from "react";
 import { Paper, Stack, Typography } from "@mui/material";
 
-const CarbonResult = ({ carbonFootprint }) => {
+export const CarbonResult = ({ carbonFootprint }) => {
   return (
     <Paper elevation={3} sx={{ p: 2, mt: 2, backgroundColor: "#f6f6f6" }}>
       <Stack spacing={2}>
@@ -13,5 +13,3 @@ const CarbonResult = ({ carbonFootprint }) => {
     </Paper>
   );
 };
-
-export default CarbonResult;
