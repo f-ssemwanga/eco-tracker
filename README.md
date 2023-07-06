@@ -34,6 +34,7 @@ npm run start
 
 **_Environment Variable Setup_**
 
+- Ensure you have a key from [RAPID API](https://rapidapi.com/)
 - Copy the `.env.example` file to `.env` in the root of the project.
 - Update the `.env` file with your API key
 
