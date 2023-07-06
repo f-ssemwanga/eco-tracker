@@ -9,7 +9,7 @@ import FrancisSemwanga from "../images/francis-semwanga.png";
 import ViktoriaMoskalenko from "../images/viktoria-moskalenko.jpg";
 import KourtneyQueeley from "../images/kourtney-queeley.png";
 import RoshanRai from "../images/roshan-rai.png";
-import LukeCraven from "../images/luke-craven.png";
+import LukeCraven from "../images/luke-craven.jpg";
 const profStyle = {
   color: sxTheme.color,
   fontSize: sxTheme.fontSize,
