@@ -2,12 +2,26 @@
 
 Eco-Tracker is a carbon footprint awareness project. It calculates carbon emissions using car /flight model and distance travelled and returns the carbon emissions and an equivalent number of trees to be planted.
 
-## User stories
+---
 
-- Feature 1: John travels 100km using petrol car. He can input 100km and click calculate to get carbon emission for his journey.
-- Feature 2: John can see the equivalent number of trees he must plant to offset his carbon emissions
-- Feature 3: John can save his favourite journies to local storage
-- Feature 4. John can delete unwanted journies from local storage.
+## Content
+
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [Screenshots](#screenshots)
+- [Technologies and Frameworks](#technologies-and-frameworks)
+- [Contacts](#contacts)
+
+---
+
+## Features
+
+- Calculate carbon emissions based on travel mode and distance.
+- View the equivalent number of trees needed to offset emissions.
+- Save favorite journeys to local storage.
+- Delete unwanted journeys from local storage.
+
+---
 
 ## Getting Started
 
@@ -23,15 +37,19 @@ npm run start
 - Copy the `.env.example` file to `.env` in the root of the project.
 - Update the `.env` file with your API key
 
+---
+
 ## Screenshots
 
 ### Desktop
 
-![alt text](./images/eco-tracker.jpg)
+![Eco Calculator Mobile](./src/images/eco-calc-desktop.png)
 
 ### Mobile
 
-![alt text](./images/eco-tracker.jpg)
+![Eco Calculator Mobile](./src/images/eco-calc-mobile.png)
+
+---
 
 ## Technologies and Frameworks
 
@@ -42,9 +60,12 @@ npm run start
 - Formik
 - Yup
 
-## Contact me:
+---
 
-- Francis: https://github.com/f-ssemwanga
-- Luke: https://github.com/N20-Dev
-- LordNinth: https://github.com/LordNinth
-- Viktoria: [GitHub](https://github.com/Vikkk111) | [LinkedIn](https://github.com/Vikkk111)
+## Contacts:
+
+- Francis Ssemwanga:[GitHub](https://github.com/f-ssemwanga) | [LinkedIn](https://www.linkedin.com/in/francis-ssemwanga-897a7112a/)
+- Luke Craven: [GitHub](https://github.com/N20-Dev)
+- Roshan Rai: [GitHub](https://github.com/LordNinth) | [LinkedIn]()
+- Viktoria: [GitHub](https://github.com/Vikkk111) | [LinkedIn](https://www.linkedin.com/in/viktoriia-moskalenko-085376241/)
+- Kourtney Queeley : [GitHub](https://github.com/Kourtneyq2) | [LinkedIn](https://www.linkedin.com/in/kourtney-queeley//)
