@@ -1,12 +1,14 @@
 # Eco-Tracker
 
-Eco-Tracker is a carbon footprint awareness project. It will calculate carbon emission using car model and distance travelled.
+Eco-Tracker is a carbon footprint awareness project. It calculates carbon emissions using car /flight model and distance travelled and returns the carbon emissions and an equivalent number of trees to be planted.
 
 ## User stories
 
 - Feature 1: John travels 100km using petrol car. He can input 100km and click calculate to get carbon emission for his journey.
 
-- Feature 2: John wants to calculate carbon emission for a journey between 2 cities and save it. He can input 2 cities in journey page and click calculate. After the result is shown, he can save it for future reference.
+- Feature 2: John can see the equivalent number of trees he must plant to offset his carbon emissions
+- Feature 3: John can save his favourite journies to local storage
+- Feature 5.  John can delete unwanted journies from local storage.
 
 ## Getting Started
 
