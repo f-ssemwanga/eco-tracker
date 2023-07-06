@@ -47,4 +47,4 @@ npm run start
 - Francis: https://github.com/f-ssemwanga
 - Luke: https://github.com/N20-Dev
 - LordNinth: https://github.com/LordNinth
-- Viktoria: https://github.com/Vikkk111
+- Viktoria: [GitHub](https://github.com/Vikkk111) | [LinkedIn](https://github.com/Vikkk111)
