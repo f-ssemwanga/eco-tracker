@@ -5,19 +5,23 @@ Eco-Tracker is a carbon footprint awareness project. It calculates carbon emissi
 ## User stories
 
 - Feature 1: John travels 100km using petrol car. He can input 100km and click calculate to get carbon emission for his journey.
-
 - Feature 2: John can see the equivalent number of trees he must plant to offset his carbon emissions
 - Feature 3: John can save his favourite journies to local storage
-- Feature 4.  John can delete unwanted journies from local storage.
+- Feature 4. John can delete unwanted journies from local storage.
 
 ## Getting Started
 
-- git clone git@github.com:LordNinth/eco-tracker.git
-- cd eco-tracker.git
+```shell
+git clone git@github.com:f-ssemwanga/eco-tracker.git
+cd eco-tracker.git
+npm install
+npm run start
+```
+
+**_Environment Variable Setup_**
+
 - Copy the `.env.example` file to `.env` in the root of the project.
 - Update the `.env` file with your API key
-- 'npm i' to install dependencies.
-- 'npm run start' to start the development server.
 
 ## Screenshots
 
@@ -32,8 +36,11 @@ Eco-Tracker is a carbon footprint awareness project. It calculates carbon emissi
 ## Technologies and Frameworks
 
 - React
-- Mui
-- JS
+- React Router DOM
+- MUI
+- Axios
+- Formik
+- Yup
 
 ## Contact me:
 
