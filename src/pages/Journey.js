@@ -25,7 +25,7 @@ export const Journey = () => {
         <Banner title="Your Saved Journeys" />
       ) : (
         <>
-          <Banner title="You Have No Saved Journeys" />
+          <Banner title="No Saved Journeys Found!" />
           <Alert severity="info">
             To save your journeys, use the calculator on the footprint page.
           </Alert>

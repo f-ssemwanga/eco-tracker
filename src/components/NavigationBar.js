@@ -12,6 +12,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import Drawer from "@mui/material/Drawer";
+import { Typography } from "@mui/material";
 
 export const NavigationBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,7 +32,7 @@ export const NavigationBar = () => {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Drawer anchor="top" open={isOpen} onClose={handleCloseDrawer}>
-            <List sx={{ backgroundColor: "rgba(46, 125, 50, 0.8)" }}>
+            <List sx={{ backgroundColor: "rgba(0, 140, 0, 0.8)" }}>
               <ListItem disablePadding>
                 <ListItemButton
                   onClick={() => {
@@ -39,7 +40,14 @@ export const NavigationBar = () => {
                     navigate("/");
                   }}
                 >
-                  <ListItemText sx={{ color: "#FFFFFF" }} primary="Home" />
+                  <ListItemText
+                    sx={{ color: "#ffffff" }}
+                    primary={
+                      <Typography variant="h6" sx={{ fontSize: "1rem" }}>
+                        HOME
+                      </Typography>
+                    }
+                  />
                 </ListItemButton>
               </ListItem>
               <ListItem disablePadding>
@@ -49,7 +57,14 @@ export const NavigationBar = () => {
                     navigate("/footprint");
                   }}
                 >
-                  <ListItemText sx={{ color: "#FFFFFF" }} primary="Footprint" />
+                  <ListItemText
+                    sx={{ color: "#ffffff" }}
+                    primary={
+                      <Typography variant="h6" sx={{ fontSize: "1rem" }}>
+                        FOOTPRINT
+                      </Typography>
+                    }
+                  />
                 </ListItemButton>
               </ListItem>
               <ListItem disablePadding>
@@ -59,7 +74,14 @@ export const NavigationBar = () => {
                     navigate("/journey");
                   }}
                 >
-                  <ListItemText sx={{ color: "#FFFFFF" }} primary="Journey" />
+                  <ListItemText
+                    sx={{ color: "#ffffff" }}
+                    primary={
+                      <Typography variant="h6" sx={{ fontSize: "1rem" }}>
+                        JOURNEY
+                      </Typography>
+                    }
+                  />
                 </ListItemButton>
               </ListItem>
             </List>
@@ -96,7 +118,9 @@ export const NavigationBar = () => {
                 }}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                Home
+                <Typography variant="h6" sx={{ fontSize: "1rem" }}>
+                  Home
+                </Typography>
               </Button>
               <Button
                 onClick={() => {
@@ -104,7 +128,9 @@ export const NavigationBar = () => {
                 }}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                Footprint
+                <Typography variant="h6" sx={{ fontSize: "1rem" }}>
+                  Footprint
+                </Typography>
               </Button>
               <Button
                 onClick={() => {
@@ -112,7 +138,9 @@ export const NavigationBar = () => {
                 }}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                Journey
+                <Typography variant="h6" sx={{ fontSize: "1rem" }}>
+                  Journey
+                </Typography>
               </Button>
             </Box>
           </Box>

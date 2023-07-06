@@ -7,10 +7,7 @@ import { Banner } from "../components/Banner";
 export const Home = () => {
   return (
     <Stack spacing={3}>
-      <Banner
-        title="Welcome to Eco Footprint!"
-        subTitle="Saving our planet together"
-      />
+      <Banner title="Eco Footprint!" subTitle="Saving our planet together" />
       <Features />
       <AboutUs />
     </Stack>

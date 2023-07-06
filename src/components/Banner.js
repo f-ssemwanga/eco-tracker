@@ -16,7 +16,7 @@ export const Banner = ({ title, subTitle }) => {
           backgroundPosition: "center",
         }}
       >
-        <Typography component="h1" variant="h3" sx={{ textAlign: "center" }}>
+        <Typography component="h1" variant="h2" sx={{ textAlign: "center" }}>
           {title}
         </Typography>
         <Typography component="h2" variant="h5">
