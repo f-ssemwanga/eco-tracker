@@ -71,14 +71,14 @@ export const NavigationBar = () => {
                 <ListItemButton
                   onClick={() => {
                     handleCloseDrawer();
-                    navigate("/journey");
+                    navigate("/my-journeys");
                   }}
                 >
                   <ListItemText
                     sx={{ color: "#ffffff" }}
                     primary={
                       <Typography variant="h6" sx={{ fontSize: "1rem" }}>
-                        JOURNEY
+                        MY JOURNEYS
                       </Typography>
                     }
                   />
@@ -134,12 +134,12 @@ export const NavigationBar = () => {
               </Button>
               <Button
                 onClick={() => {
-                  navigate("/journey");
+                  navigate("/my-journeys");
                 }}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
                 <Typography variant="h6" sx={{ fontSize: "1rem" }}>
-                  Journey
+                  My Journeys
                 </Typography>
               </Button>
             </Box>

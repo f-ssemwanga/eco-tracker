@@ -4,8 +4,13 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
-import Box from "@mui/material/Box";
-import ParkIcon from "@mui/icons-material/Park";
+import Stack from "@mui/material/Stack";
+import Divider from "@mui/material/Divider";
+import DirectionsCarIcon from "@mui/icons-material/DirectionsCar";
+import FlightIcon from "@mui/icons-material/Flight";
+import CardActions from "@mui/material/CardActions";
+
+import Grid from "@mui/material/Grid";
 
 export const JourneyCard = ({ journey, onDelete, count }) => {
   const [isVisible, setIsVisible] = useState(true);
@@ -21,63 +26,89 @@ export const JourneyCard = ({ journey, onDelete, count }) => {
       style={{ opacity: isVisible ? 1 : 0, transition: "opacity 300ms" }}
     >
       <Card>
-        <CardContent
-          sx={{
-            backgroundColor: "#f8f8f8",
-            boxShadow: "0 2px 4px rgba(0, 0, 0, 0.5)",
-            padding: "2em",
-            margin: "1em",
-          }}
-        >
-          <Typography
-            variant="h5"
-            component="div"
-            sx={{
-              fontWeight: "bold",
-              marginBottom: "1.5rem",
-              paddingRight: "1em",
-            }}
-          >
-            Journey{count}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Mode: {journey.mode}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Distance: {journey.distance}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Fuel Type: {journey.fuelType}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Carbon Footprint: {journey.carbonFootprint} CO2e
-          </Typography>
-          <Box display="flex" alignItems="center">
+        <CardContent>
+          <Stack spacing={2}>
             <Typography
-              variant="body2"
-              color="text.secondary"
-              sx={{ marginRight: "0.5em" }}
+              variant="h5"
+              component="h2"
+              sx={{ textAlign: "center" }}
             >
-              Trees Needed for Offset: {journey.trees.toFixed(2)}
+              Journey {count}
             </Typography>
-            <ParkIcon />
-          </Box>
-          <Box display="flex" justifyContent="center" marginTop="2em">
-            <Button
-              variant="contained"
-              sx={{
-                backgroundColor: "red",
-                color: "white",
-                "&:hover": {
-                  backgroundColor: "darkred",
-                },
-              }}
-              onClick={handleDelete}
-            >
-              Delete
-            </Button>
-          </Box>
+            <Divider />
+            <Grid container spacing={2}>
+              <Grid item xs={4}>
+                <Typography variant="body2" color="text.secondary">
+                  Mode
+                </Typography>
+              </Grid>
+              <Grid item xs={8}>
+                {journey.mode === "car" && <DirectionsCarIcon />}
+                {journey.mode === "flight" && <FlightIcon />}
+              </Grid>
+
+              <Grid item xs={4}>
+                <Typography variant="body2" color="text.secondary">
+                  Distance
+                </Typography>
+              </Grid>
+              <Grid item xs={8}>
+                <Typography variant="body2" color="text.secondary">
+                  {journey.distance} KM
+                </Typography>
+              </Grid>
+
+              <Grid item xs={4}>
+                <Typography variant="body2" color="text.secondary">
+                  Fuel Type
+                </Typography>
+              </Grid>
+              <Grid item xs={8}>
+                <Typography variant="body2" color="text.secondary">
+                  {journey.fuelType.replace(/([a-z])([A-Z])/g, "$1 $2")}
+                </Typography>
+              </Grid>
+
+              <Grid item xs={4}>
+                <Typography variant="body2" color="text.secondary">
+                  Footprint
+                </Typography>
+              </Grid>
+              <Grid item xs={8}>
+                <Typography variant="body2" color="text.secondary">
+                  {journey.carbonFootprint} CO2e
+                </Typography>
+              </Grid>
+
+              <Grid item xs={4}>
+                <Typography variant="body2" color="text.secondary">
+                  Trees
+                </Typography>
+              </Grid>
+              <Grid item xs={8}>
+                <Typography variant="body2" color="text.secondary">
+                  {journey.trees.toFixed(2)} trees to offset
+                </Typography>
+              </Grid>
+            </Grid>
+          </Stack>
         </CardContent>
+        <CardActions>
+          <Button
+            variant="contained"
+            sx={{
+              backgroundColor: "red",
+              color: "white",
+              "&:hover": {
+                backgroundColor: "darkred",
+              },
+            }}
+            onClick={handleDelete}
+            fullWidth
+          >
+            Delete
+          </Button>
+        </CardActions>
       </Card>
     </Paper>
   );

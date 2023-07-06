@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
+import Alert from "@mui/material/Alert";
+import { Link } from "react-router-dom";
 import { JourneyCard } from "../components/JourneyCard";
 import { Banner } from "../components/Banner";
-import Alert from "@mui/material/Alert";
 
-export const Journey = () => {
+export const MyJourneys = () => {
   const [journeys, setJourneys] = useState([]);
 
   useEffect(() => {
@@ -22,17 +24,18 @@ export const Journey = () => {
   return (
     <Stack spacing={3}>
       {journeys.length > 0 ? (
-        <Banner title="Your Saved Journeys" />
+        <Banner title="Your saved journeys" />
       ) : (
         <>
-          <Banner title="No Saved Journeys Found!" />
+          <Banner title="You have no saved journeys!" />
           <Alert severity="info">
-            To save your journeys, use the calculator on the footprint page.
+            To save your journeys, use the calculator on the{" "}
+            <Link to="/footprint">footprint</Link> page.
           </Alert>
         </>
       )}
 
-      <Grid container spacing={3} justifyContent={"space-between"}>
+      <Grid container spacing={3} justifyContent={"space-evenly"}>
         {journeys.map((journey, index) => (
           <Grid
             item

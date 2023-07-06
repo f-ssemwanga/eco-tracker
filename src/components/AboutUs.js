@@ -10,6 +10,7 @@ import ViktoriaMoskalenko from "../images/viktoria-moskalenko.jpg";
 import KourtneyQueeley from "../images/kourtney-queeley.png";
 import RoshanRai from "../images/roshan-rai.png";
 import LukeCraven from "../images/luke-craven.jpg";
+
 const profStyle = {
   color: sxTheme.color,
   fontSize: sxTheme.fontSize,
@@ -17,6 +18,7 @@ const profStyle = {
   flexDirection: sxTheme.flexDirection,
   alignItems: sxTheme.alignItems,
 };
+
 export const AboutUs = () => {
   return (
     <Paper elevation={3}>
@@ -35,6 +37,7 @@ export const AboutUs = () => {
               href="https://github.com/f-ssemwanga"
               underline="none"
               sx={profStyle}
+              target="_blank"
             >
               <Avatar
                 alt="Francis Ssemwanga"
@@ -51,13 +54,8 @@ export const AboutUs = () => {
             <Link
               href="https://github.com/Vikkk111"
               underline="none"
-              sx={{
-                color: "#008c00",
-                fontSize: "1.2rem",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-              }}
+              sx={profStyle}
+              target="_blank"
             >
               <Avatar
                 alt="Viktoria Moskalenko"
@@ -74,6 +72,7 @@ export const AboutUs = () => {
               href="https://github.com/Kourtneyq2"
               underline="none"
               sx={profStyle}
+              target="_blank"
             >
               <Avatar
                 alt="Kourtney Queeley"
@@ -91,6 +90,7 @@ export const AboutUs = () => {
               href="https://github.com/LordNinth"
               underline="none"
               sx={profStyle}
+              target="_blank"
             >
               <Avatar
                 alt="Roshan Rai"
@@ -108,6 +108,7 @@ export const AboutUs = () => {
               href="https://github.com/N20-Dev"
               underline="none"
               sx={profStyle}
+              target="_blank"
             >
               <Avatar
                 alt="Luke Craven"

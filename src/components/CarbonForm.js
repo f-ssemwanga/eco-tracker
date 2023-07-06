@@ -80,9 +80,7 @@ export const CarbonForm = ({ onFormSubmit }) => {
 
   const formik = useFormik({
     initialValues,
-    onSubmit: (values) => {
-      onFormSubmit(values);
-    },
+    onSubmit: onFormSubmit,
     validationSchema,
   });
 
