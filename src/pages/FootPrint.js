@@ -6,6 +6,7 @@ import { Banner } from "../components/Banner";
 import Alert from "@mui/material/Alert";
 import Button from "@mui/material/Button";
 import { v4 as uuidv4 } from "uuid";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import { CarbonForm } from "../components/CarbonForm";
 import { CarbonResult } from "../components/CarbonResult";
@@ -71,6 +72,15 @@ export const FootPrint = () => {
     localStorage.setItem("journeys", JSON.stringify(newItems));
     setSaved(true);
   };
+
+  //custom colour theme for the button
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: "#008c00",
+      },
+    },
+  });
   return (
     <Stack spacing={3}>
       <Banner title="Eco Calculator!" />
@@ -93,15 +103,17 @@ export const FootPrint = () => {
       {carbonData && (
         <Stack spacing={3}>
           <Trees co2eResult={carbonData?.carbonFootprint} />
-          <Button
-            variant="contained"
-            color="success"
-            sx={{ "& .MuiButton-root": { width: 100 } }}
-            onClick={handleSaveToStorage}
-            disabled={saved}
-          >
-            Save Journey to Favourites
-          </Button>
+          <ThemeProvider theme={theme}>
+            <Button
+              variant="contained"
+              color="primary"
+              sx={{ "& .MuiButton-root": { width: 100 } }}
+              onClick={handleSaveToStorage}
+              disabled={saved}
+            >
+              Save Journey to Favourites
+            </Button>
+          </ThemeProvider>
         </Stack>
       )}
     </Stack>

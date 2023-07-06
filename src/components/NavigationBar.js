@@ -27,10 +27,7 @@ export const NavigationBar = () => {
   };
 
   return (
-    <AppBar
-      position="static"
-      sx={{ backgroundColor: "rgba(46, 125, 50, 0.8)" }}
-    >
+    <AppBar position="static" sx={{ backgroundColor: "#008c00" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Drawer anchor="top" open={isOpen} onClose={handleCloseDrawer}>

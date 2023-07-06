@@ -1,4 +1,6 @@
 import React from "react";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+
 import {
   Box,
   Stack,
@@ -47,6 +49,7 @@ const FlightOptions = [
   { value: "LongBusinessClassFlight", label: "Long Business Class Flight" },
   { value: "LongFirstClassFlight", label: "Long First Class Flight" },
 ];
+
 export const CarbonForm = ({ onFormSubmit }) => {
   const initialValues = {
     mode: "",
@@ -88,7 +91,14 @@ export const CarbonForm = ({ onFormSubmit }) => {
     formik.setFieldValue("fuelType", "");
     formik.setFieldValue("mode", selectedMode);
   };
-
+  //custom colour theme for the button
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: "#008c00",
+      },
+    },
+  });
   return (
     <Box sx={{ p: 2 }}>
       <Stack component="form" onSubmit={formik.handleSubmit} spacing={3}>
@@ -175,9 +185,12 @@ export const CarbonForm = ({ onFormSubmit }) => {
           error={formik.touched.distance && Boolean(formik.errors.distance)}
           helperText={formik.touched.distance && formik.errors.distance}
         />
-        <Button color="success" variant="contained" type="submit">
-          Calculate
-        </Button>
+
+        <ThemeProvider theme={theme}>
+          <Button color="primary" variant="contained" type="submit">
+            Calculate
+          </Button>
+        </ThemeProvider>
       </Stack>
     </Box>
   );

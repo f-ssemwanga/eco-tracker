@@ -3,6 +3,7 @@ import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
 import { JourneyCard } from "../components/JourneyCard";
 import { Banner } from "../components/Banner";
+import Alert from "@mui/material/Alert";
 
 export const Journey = () => {
   const [journeys, setJourneys] = useState([]);
@@ -23,7 +24,12 @@ export const Journey = () => {
       {journeys.length > 0 ? (
         <Banner title="Your Saved Journeys" />
       ) : (
-        <Banner title="No Saved Journeys" />
+        <>
+          <Banner title="You Have No Saved Journeys" />
+          <Alert severity="info">
+            To save your journeys, use the calculator on the footprint page.
+          </Alert>
+        </>
       )}
 
       <Grid container spacing={3} justifyContent={"space-between"}>

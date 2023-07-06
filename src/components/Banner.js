@@ -9,7 +9,12 @@ export const Banner = ({ title, subTitle }) => {
         alignContent="center"
         alignItems="center"
         spacing={2}
-        sx={{ py: 6, backgroundColor: "#f6f6f6" }}
+        sx={{
+          py: 6,
+          backgroundImage: "url('/images/bgImage.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
       >
         <Typography component="h1" variant="h3" sx={{ textAlign: "center" }}>
           {title}
