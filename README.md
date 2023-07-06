@@ -68,5 +68,5 @@ npm run start
 - Francis Ssemwanga:[GitHub](https://github.com/f-ssemwanga) | [LinkedIn](https://www.linkedin.com/in/francis-ssemwanga-897a7112a/)
 - Luke Craven: [GitHub](https://github.com/N20-Dev)
 - Roshan Rai: [GitHub](https://github.com/LordNinth) | [LinkedIn]()
-- Viktoria: [GitHub](https://github.com/Vikkk111) | [LinkedIn](https://www.linkedin.com/in/viktoriia-moskalenko-085376241/)
+- Viktoria: [GitHub](https://github.com/Vikkk111) | [LinkedIn](https://www.linkedin.com/in/roshan-rai-636191184/)
 - Kourtney Queeley : [GitHub](https://github.com/Kourtneyq2) | [LinkedIn](https://www.linkedin.com/in/kourtney-queeley//)
