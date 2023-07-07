@@ -30,10 +30,10 @@ export const Features = () => {
             </Typography>
           </Stack>
           <Stack sx={{ width: "18rem", textAlign: "center" }} spacing={2}>
-            <Typography variant="h5">Distance Calculation</Typography>
+            <Typography variant="h5">Save your Journeys</Typography>
             <Typography component="p" variant="body1">
-              Enter a distance to calculate the CO2e of your carbon footprint.
-              Ideal for planning trips and journeys.
+              Save your journeys to local storage. A good place to review your
+              contribution to a carbon free environment.
             </Typography>
           </Stack>
         </Stack>
