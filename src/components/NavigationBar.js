@@ -13,6 +13,8 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import Drawer from "@mui/material/Drawer";
 import { Typography } from "@mui/material";
+import logo from "../images/logo.png";
+import { Avatar } from "@mui/material";
 
 export const NavigationBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,6 +33,7 @@ export const NavigationBar = () => {
     <AppBar position="static" sx={{ backgroundColor: "#008c00" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
+          <Avatar alt="Logo" src={logo} />
           <Drawer anchor="top" open={isOpen} onClose={handleCloseDrawer}>
             <List sx={{ backgroundColor: "rgba(0, 140, 0, 0.8)" }}>
               <ListItem disablePadding>
